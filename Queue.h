@@ -1,4 +1,7 @@
 #pragma once
+#include <vector>
+using namespace std;
+
 struct queueNodeData {
 	int timeAvailable;
 };
@@ -6,6 +9,15 @@ struct queueNodeData {
 struct queueNode {
 	queueNodeData data;
 	queueNode* nextPtr;
+};
+
+struct queueData {
+	int queueCount = 0;
+	int totalIdleTime = 0;
+	int totalOverTime = 0;
+	int maxQueueLength = 0;
+	int totalItems = 0;
+	vector<int> cartList;
 };
 
 class Queue {
